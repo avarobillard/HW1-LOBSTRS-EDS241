@@ -1,5 +1,5 @@
 ---
-title: "Assignment 1: "
+title: "Assignment 1"
 subtitle: "California Spiny Lobster (*Panulirus Interruptus*): Assessing the Impact of Marine Protected Areas (MPAs) at 5 Reef Sites in Santa Barbara County" 
 author: "EDS 241 / ESM 244 (**Due: 1/17**)"
 date: "1/8/26"
@@ -46,7 +46,6 @@ library(performance)
 library(jtools)
 library(gt)
 library(gtsummary)
-library(MASS) ## NOTE: The `select()` function is masked. Use: `dplyr::select()` ##
 library(interactions) 
 
 ```
@@ -55,7 +54,7 @@ library(interactions)
 
 #### DATA SOURCE:
 
-Reed D. 2019. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012. Environmental Data Initiative. https://doi.org/10.6073/pasta/a593a675d644fdefb736750b291579a0. Dataset accessed 11/17/2019.
+> [Reed D. 2019. SBC LTER: Reef: Abundance, size and fishing effort for California Spiny Lobster (Panulirus interruptus), ongoing since 2012. Environmental Data Initiative.](https://doi.org/10.6073/pasta/a593a675d644fdefb736750b291579a0) Data accessed 11/17/2019.
 
 ------------------------------------------------------------------------
 
@@ -82,7 +81,7 @@ Let’s break it down step by step and see what the data reveals! 📊
 
 #### Step 2: Read & wrangle data
 
-**a.** Read in the raw data. Name the data.frame (`df`) `rawdata`
+**a.** Read in the raw data from the "data" folder named `spiny_abundance_sb_18.csv`. Name the data.frame `rawdata`
 
 **b.** Use the function `clean_names()` from the `janitor` package
 
@@ -247,6 +246,10 @@ check_zeroinflation(m2_pois)
 **i.** Interpret the treatment estimate result in your own words. Compare with results from the previous model.
 
 ```{r}
+library(MASS) ## NOTE: The `select()` function is masked. Use: `dplyr::select()` ##
+```
+
+```{r}
 
 # NOTE: The `glm.nb()` function does not require a `family` argument
 
@@ -363,7 +366,7 @@ d. Discuss the following causal inference assumptions in the context of the MPA 
 
 # EXTRA CREDIT
 
-> Use the recent lobster abundance data with observations collected up until 2024 (`lobster_sbchannel_24.csv`) to run an analysis evaluating the effect of MPA status on lobster counts using the same focal variables.
+> Use the recent lobster abundance data with observations collected up until 2024 (`extracredit_sblobstrs24.csv`) to run an analysis evaluating the effect of MPA status on lobster counts using the same focal variables.
 
 a. Create a new script for the analysis on the updated data
 b. Run at least 3 regression models & assess model diagnostics

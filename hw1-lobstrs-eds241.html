@@ -12,7 +12,7 @@
 <meta name="author" content="EDS 241 / ESM 244 (Due: 1/17)" />
 
 
-<title>Assignment 1:</title>
+<title>Assignment 1</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -367,7 +367,7 @@ display: none;
 
 
 
-<h1 class="title toc-ignore">Assignment 1:</h1>
+<h1 class="title toc-ignore">Assignment 1</h1>
 <h3 class="subtitle">California Spiny Lobster (<em>Panulirus
 Interruptus</em>): Assessing the Impact of Marine Protected Areas (MPAs)
 at 5 Reef Sites in Santa Barbara County</h3>
@@ -408,15 +408,16 @@ library(performance)
 library(jtools)
 library(gt)
 library(gtsummary)
-library(MASS) ## NOTE: The `select()` function is masked. Use: `dplyr::select()` ##
 library(interactions) </code></pre>
 <hr />
 <div id="data-source" class="section level4">
 <h4>DATA SOURCE:</h4>
-<p>Reed D. 2019. SBC LTER: Reef: Abundance, size and fishing effort for
+<blockquote>
+<p><a href="https://doi.org/10.6073/pasta/a593a675d644fdefb736750b291579a0">Reed
+D. 2019. SBC LTER: Reef: Abundance, size and fishing effort for
 California Spiny Lobster (Panulirus interruptus), ongoing since 2012.
-Environmental Data Initiative. <a href="https://doi.org/10.6073/pasta/a593a675d644fdefb736750b291579a0" class="uri">https://doi.org/10.6073/pasta/a593a675d644fdefb736750b291579a0</a>.
-Dataset accessed 11/17/2019.</p>
+Environmental Data Initiative.</a> Data accessed 11/17/2019.</p>
+</blockquote>
 <hr />
 </div>
 </div>
@@ -455,8 +456,9 @@ likely (be specific!).</p>
 </div>
 <div id="step-2-read-wrangle-data" class="section level4">
 <h4>Step 2: Read &amp; wrangle data</h4>
-<p><strong>a.</strong> Read in the raw data. Name the data.frame
-(<code>df</code>) <code>rawdata</code></p>
+<p><strong>a.</strong> Read in the raw data from the “data” folder named
+<code>spiny_abundance_sb_18.csv</code>. Name the data.frame
+<code>rawdata</code></p>
 <p><strong>b.</strong> Use the function <code>clean_names()</code> from
 the <code>janitor</code> package</p>
 <pre class="r"><code># HINT: check for coding of missing values (`na = &quot;-99999&quot;`)
@@ -598,6 +600,7 @@ diagnostics</p>
 this GLM model.</p>
 <p><strong>i.</strong> Interpret the treatment estimate result in your
 own words. Compare with results from the previous model.</p>
+<pre class="r"><code>library(MASS) ## NOTE: The `select()` function is masked. Use: `dplyr::select()` ##</code></pre>
 <pre class="r"><code># NOTE: The `glm.nb()` function does not require a `family` argument
 
 m3_nb &lt;- </code></pre>
@@ -699,7 +702,7 @@ assumption are reasonable:</p>
 <h1>EXTRA CREDIT</h1>
 <blockquote>
 <p>Use the recent lobster abundance data with observations collected up
-until 2024 (<code>lobster_sbchannel_24.csv</code>) to run an analysis
+until 2024 (<code>extracredit_sblobstrs24.csv</code>) to run an analysis
 evaluating the effect of MPA status on lobster counts using the same
 focal variables.</p>
 </blockquote>
